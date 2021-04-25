@@ -21,8 +21,8 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  colors: [Colors.cyan[400], Colors.cyanAccent[200]],
+                  begin: Alignment.topLeft,
+                  colors: [Colors.indigoAccent, Colors.cyan[100]],
                 ),
               ),
               child: Shimmer.fromColors(
