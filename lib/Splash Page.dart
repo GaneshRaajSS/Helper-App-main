@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'HomeScreen.dart';
 import 'dart:async';
 
 import 'package:shimmer/shimmer.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: SplashScreen(),
+    ),
+  );
+}
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -11,11 +20,33 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(
+      Duration(seconds: 3),
+      () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyApp(),
+          ),
+        );
+      },
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
+          Center(
+            child: Container(
+                child: Image.network(
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2PiomuOB6jML1Sd_42bkpvcsLZtmmRs0LdQ&usqp=CAU')),
+          ),
           Padding(
             padding: const EdgeInsets.all(0),
             child: Container(
@@ -48,14 +79,14 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 300, 0, 0),
-            child: SpinKitFadingCircle(color: Colors.red[400]),
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0, 300, 0, 0),
+              child: SpinKitFadingCircle(color: Colors.red[400]),
+            ),
           ),
         ],
       ),
     );
   }
 }
-
-HomeScreen() {}
