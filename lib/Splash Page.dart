@@ -37,14 +37,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 300, 0, 0),
-              child: SpinKitFadingCircle(color: Colors.red[400]),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: Center(
+              child: Image.network(
+                  'https://image.freepik.com/free-vector/handshake-abstract-sign-symbol-logo-template-hand-shake-incorporated-letter-h-concept_167715-230.jpg'),
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 200, 0, 0),
+            child: SpinKitFadingCircle(color: Colors.red[400]),
           ),
         ],
       ),
